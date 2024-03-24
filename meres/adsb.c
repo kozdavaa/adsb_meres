@@ -55,17 +55,21 @@ int main(int argc,char **argv)
 		for(bix=0; bix<read_len; bix+=2) {
 			// convert I-Q to magnitude
 			abs_val=iq_to_abs[buffer[bix]][buffer[bix +1]];
-			// FIR filtering
-
+			// FIR filtering;
+			accumulator -= fifo[fptr];
+			accumulator += abs_val;
+			fifo[fptr] = abs_val;
+			fptr = fptr+1;
+			fptr = fptr%FIR_LEN;
 			// Decoding
 
 			// ADS-B packet search and print
 
-			printf( "%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val);
+			//printf( "%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN);
 		}
 
 		// uncomment if not testing
-		break;
+		//break;
 	} while(read_len>0);
 
 	return 0;
