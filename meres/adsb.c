@@ -54,14 +54,14 @@ int main(int argc,char **argv)
 
 		for(bix=0; bix<read_len; bix+=2) {
 			// convert I-Q to magnitude
-
+			abs_val=iq_to_abs[buffer[bix]][buffer[bix +1]];
 			// FIR filtering
 
 			// Decoding
 
 			// ADS-B packet search and print
 
-			printf( "%d\t%d\n", buffer[bix], buffer[bix+1] );
+			printf( "%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val);
 		}
 
 		// uncomment if not testing
