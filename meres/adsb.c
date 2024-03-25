@@ -76,27 +76,27 @@ int main(int argc,char **argv)
 				else
 					stm = 0;
 			}
-			else
+			else if((stm>=16)&&(stm<PCKT_LEN))
 			{
 				if (stm==16) printf("*");
-				if((stm>=16)&&(stm<=PCKT_LEN)&&((stm%2)==0))
+				if ((stm%2)==0)
 				{
-					if(bit==1)hex=hex|1;
-					hex = hex<<1;
+					//printf("%d",bit);
+					hex=hex|bit;
 					j++;
-					if(j==7) {
+					if(j==8) {
 						printf("%02x",hex);
 						hex = 0;
 						j = 0;
 					}
-					stm++;
+					else hex = hex<<1;
 				}
-				else if((stm>=16)&&(stm<=PCKT_LEN)) stm++;
-				else
-				{
-					printf(";\r\n");
-					stm = 0;
-				}
+				stm++;
+			}
+			else
+			{
+				printf(";\r\n");
+				stm = 0;
 			}
 			//printf( "%d\t%d\t%d\t%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
 		}
