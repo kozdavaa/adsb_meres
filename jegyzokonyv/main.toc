@@ -1,0 +1,8 @@
+\select@language {magyar} \contentsline {section}{\numberline {1}Mérés célja}{2}{section.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Mérés}{2}{section.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1}Elsőfordítás}{2}{subsection.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2}Abszolút érték meghatározása}{3}{subsection.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3}Döntési küszöb meghatározása}{4}{subsection.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.4}Preamble detekció és csomag dekódolás}{5}{subsection.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.5}Dekódolt csomagok}{5}{subsection.2.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.6}Kiértékelés}{6}{subsection.2.6}%

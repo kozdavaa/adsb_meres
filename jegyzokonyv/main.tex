@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper,oneside]{article}
+% nagyon sok kép esetén meggyorsítható a fordítás a draft móddal
+% \documentclass[12pt,a4paper,oneside,draft]{report}
+% ekkor a képek nem renderelődnek ki, csak placeholder lesz mérethelyesen
+\usepackage[utf8]{inputenc} % mindenképp maradjon az utf-8 kódolás
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics} % grafikus elemek, képek berakásához
+\usepackage{epsfig} % eps importáláshoz
+\usepackage{listings}
+\usepackage{sectsty}
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{hyperref} % PDF hivatkozásokhoz kell
+\usepackage[hang]{caption}
+\usepackage{titling} % a title, author parancsok szabad használatához
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+
+% a TikZ rajzoló modul, és a kapcsolási rajz készítő modul, ha kell
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+
+% az A4 oldal margóinak és méreteinek beállítása
+\usepackage[left=25mm,right=25mm,top=20mm,bottom=25mm]{geometry}\pagestyle{plain}
+
+% A sorköz távolság beállítása
+% egyszeres sorköz
+\singlespacing
+% 1,5 sorköz
+% \onehalfspacing
+
+% A hivatkozások, és linkek átállítása alapértelmezett színre, fekete-fehér nyomtatáshoz optimalizálva
+\hypersetup
+{
+  	colorlinks,
+  	citecolor=black,
+ 	linkcolor=black,
+  	urlcolor=black
+}
+
+% --------- A hallgató által kitöltendő rész! --------- %
+
+% a dolgozat típusa
+\title{Mérési Jegyzőkönyv} 
+
+% a dolgozat szerzője
+\author{Kozma Dávid Márk}
+
+% a dolgozat típusát adjuk meg tárgyesetben, kisbetűvel (pl.: diplomatervet, szakdolgozatot, témalabor beszámolót stb.)
+\newcommand{\dokumentumtipus}{jegyzőkönyv} 
+
+% a dolgozat témája
+\newcommand{\dokumentumcim}{ADSB Radar csomag demodulálása}
+
+% --------- A hallgató által kitöltendő rész! --------- %
+
+\begin{document}
+\include{content/titlepage}
+\tableofcontents
+\include{content/meres}
+\end{document}
