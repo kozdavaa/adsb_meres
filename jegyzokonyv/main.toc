@@ -5,4 +5,5 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {2.3}Döntési küszöb meghatározása}{4}{subsection.2.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.4}Preamble detekció és csomag dekódolás}{5}{subsection.2.4}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.5}Dekódolt csomagok}{6}{subsection.2.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.6}Kiértékelés}{6}{subsection.2.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.6}RTL SDR teszt}{7}{subsection.2.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.7}Kiértékelés}{7}{subsection.2.7}%

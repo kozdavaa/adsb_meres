@@ -114,6 +114,42 @@ else
 *069431ec11059a3781923a225998;
 \end{lstlisting}
 
+\newpage
+\subsection{RTL SDR teszt}
+Miután sikeresen megvalósítottam a dekódoló programot, a működést RTL SDR segítségével is tesztelltem.
+\begin{lstlisting}
+Using device 0: Generic RTL2832U OEM
+Detached kernel driver
+Found Rafael Micro R820T tuner
+Exact sample rate is: 2000000.052982 Hz
+[R82XX] PLL not locked!
+Sampling at 2000000 S/s.
+Tuned to 1009000000 Hz.
+Tuner gain set to automatic.
+Reading samples in async mode...
+Allocating 15 zero-copy buffers
+*c52248871cc10f052998f4ed3db3;
+*6706a168eaf04e1c1e50f34da960;
+*647369aa9f197a24e63025475362;
+*b9bb03b544d0aac058a50f928121;
+*bc58c498033410c348b4c9a32689;
+*75544b5b2203601c4603141a6557;
+*2039494201d88c24632124182294;
+*958144cabc6a8064b136221d10dc;
+*c829a5623256bb642bba135aa339;
+*5368c866919a33619e270aa220a1;
+*e304034f28d12d48952b15f44b6d;
+*f89910a4736cb58d4a9e698550a1;
+*e5bd4a37819e6368218994253dc8;
+*d2d71b133d75c18bcb3d9188844d;
+*db5f837b8b9c8707600b3ab31c89;
+*a2b9f94afce4c3a9cd7c4ee8d0ac;
+*d195e92e9cc568168a34b2a17488;
+*4ba3ace1cde350b6813210ea4c76;
+*23292a9954b21c61aaa49b3765eb;
+*e22176e3be7e26de960ce06c8d4c;
+\end{lstlisting}
+
 \subsection{Kiértékelés}
 A mérés sikeresnek tekinthatő mert, a mérés során sikerült az adsb jelet demodulálni illetve a csomagokat is megfelelően dekódolni.\\
 \\
