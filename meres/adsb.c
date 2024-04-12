@@ -64,7 +64,8 @@ int main(int argc,char **argv)
 			fptr = fptr+1;
 			fptr = fptr%FIR_LEN;
 			// Decoding
-			if (fifo[i] > (accumulator/FIR_LEN))
+			warning;
+			if (fifo[i] > (accumulator/FIR_LEN)) // error somewhere here because it don't represent the actual value
 				bit = 1;
 			else
 				bit = 0;
@@ -78,14 +79,14 @@ int main(int argc,char **argv)
 			}
 			else if((stm>=16)&&(stm<PCKT_LEN))
 			{
-				if (stm==16) printf("*");
+				//if (stm==16) printf("*");
 				if ((stm%2)==0)
 				{
 					//printf("%d",bit);
 					hex=hex|bit;
 					j++;
 					if(j==8) {
-						printf("%02x",hex);
+						//printf("\ns%02x\n",hex);
 						hex = 0;
 						j = 0;
 					}
@@ -95,14 +96,14 @@ int main(int argc,char **argv)
 			}
 			else
 			{
-				printf(";\r\n");
+				//printf(";\r\n");
 				stm = 0;
 			}
-			//printf( "%d\t%d\t%d\t%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
+			printf( "%d\t%d\t%d\t%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
 		}
 
 		// uncomment if not testing
-		//break;
+		break;
 	} while(read_len>0);
 
 	return 0;
