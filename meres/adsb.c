@@ -9,8 +9,8 @@
 #define FIR_LEN  8
 
 // input data buffer length
-//#define BUF_SIZE  131072
-#define BUF_SIZE  100
+#define BUF_SIZE  131072
+//#define BUF_SIZE  100
 
 int main(int argc,char **argv)
 {
@@ -61,16 +61,14 @@ int main(int argc,char **argv)
 			accumulator -= fifo[fptr];
 			accumulator += abs_val;
 			fifo[fptr] = abs_val;
-			//i =  (FIR_LEN - (fptr-(FIR_LEN/2)))%FIR_LEN; //pointer for the abs_val
-			i = (fptr+(FIR_LEN/2))%FIR_LEN;
+			i = (fptr+(FIR_LEN/2))%FIR_LEN; // The pointer calculation was wrong here.
 			fptr++;
 			fptr = fptr%FIR_LEN;
 			// Decoding
-			if (fifo[i] > (accumulator/FIR_LEN)) // error somewhere here because it don't represent the actual value
+			if (fifo[i] > (accumulator/FIR_LEN))
 				bit = 1;
 			else
 				bit = 0;
-			/*
 			// ADS-B packet search and print
 			if (stm < 16)
 			{
@@ -81,14 +79,14 @@ int main(int argc,char **argv)
 			}
 			else if((stm>=16)&&(stm<PCKT_LEN))
 			{
-				//if (stm==16) printf("*");
+				if (stm==16) printf("*");
 				if ((stm%2)==0)
 				{
 					//printf("%d",bit);
 					hex=hex|bit;
 					j++;
 					if(j==8) {
-						//printf("\ns%02x\n",hex);
+						printf("%02x",hex);
 						hex = 0;
 						j = 0;
 					}
@@ -98,17 +96,17 @@ int main(int argc,char **argv)
 			}
 			else
 			{
-				//printf(";\r\n");
+				printf(";\r\n");
 				stm = 0;
 			}
-			*/
+			/*
 			//printf( "%d\t%d\t%d\t%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
 			for (j = 0; j < FIR_LEN; j++)
 			{
 				printf("%d ",fifo[j]);
 			}
 			printf( "\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", fptr, i, buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
-			
+			*/
 		}
 
 		// uncomment if not testing
