@@ -106,7 +106,7 @@ int main(int argc,char **argv)
 			{
 				printf("%d ",fifo[j]);
 			}
-			printf( "\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
+			printf( "\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", fptr, i, buffer[bix], buffer[bix+1], abs_val, accumulator/FIR_LEN, bit,stm,hex);
 			
 		}
 
