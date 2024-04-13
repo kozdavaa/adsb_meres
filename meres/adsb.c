@@ -110,7 +110,7 @@ int main(int argc,char **argv)
 		}
 
 		// uncomment if not testing
-		break;
+		//break;
 	} while(read_len>0);
 
 	return 0;
