@@ -61,7 +61,8 @@ int main(int argc,char **argv)
 			accumulator -= fifo[fptr];
 			accumulator += abs_val;
 			fifo[fptr] = abs_val;
-			i =  (FIR_LEN - (fptr-(FIR_LEN/2)))%FIR_LEN; //pointer for the abs_val
+			//i =  (FIR_LEN - (fptr-(FIR_LEN/2)))%FIR_LEN; //pointer for the abs_val
+			i = (fptr+(FIR_LEN/2))%FIR_LEN;
 			fptr++;
 			fptr = fptr%FIR_LEN;
 			// Decoding
